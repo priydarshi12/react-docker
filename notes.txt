@@ -1,0 +1,135 @@
+JIT-JUST IN TIME COMPILER
+
+tailwind is utility class
+
+we can add dynamic values to css property by using [] bracket for ex-
+text-[50px]
+
+default tailwind class border-2,h-10
+
+LAYOUT
+deals with positioning of elements on screen
+
+tailwind provide diff utility for layout class of aspect ratio,box sizing , float ,position ,
+overflow, z-index
+
+
+POSITION
+position determine how an html element is positioned within its containing element or overall websites
+
+values->elative,absolute,fixed,sticky
+
+
+DIAPLAY
+determine how the element behaves in terms of layout and visiblity within the document
+controls how the elements are displayes
+
+values->block, inline, inline block ,none , flex , grid
+
+
+ 
+MEDIA QUERY
+Every utility class in Tailwind can be applied conditionally at different breakpoints, which makes it a piece of cake to build complex responsive interfaces without ever leaving your HTML.
+There are five breakpoints by default, inspired by common device resolutions:
+
+Breakpoint prefix	Minimum width	CSS
+sm	                    640px	    @media (min-width: 640px) { ... }
+md	                    768px	    @media (min-width: 768px) { ... }
+lg	                    1024px	    @media (min-width: 1024px) { ... }
+xl	                    1280px	    @media (min-width: 1280px) { ... }
+2xl	                    1536px	    @media (min-width: 1536px) { ... }
+
+To add a utility but only have it take effect at a certain breakpoint, all you need to do is prefix the utility with the breakpoint name, followed by the : character:
+
+<!-- Width of 16 by default, 32 on medium screens, and 48 on large screens -->
+<img class="w-16 md:w-32 lg:w-48" src="...">
+
+by default tailwind css follow min-width
+
+
+PSEUDO class
+
+Using utilities to style elements on hover, focus, and more.
+
+Every utility class in Tailwind can be applied conditionally by adding a modifier to the beginning of the class name that describes the condition you want to target.
+
+<button class="bg-sky-500 hover:bg-sky-700 ...">
+  Save changes
+</button>
+
+Traditionally the same class name applies different styles on hover
+
+.btn-primary {
+  background-color: #0ea5e9;
+}
+.btn-primary:hover {
+  background-color: #0369a1;
+}
+
+Tailwind includes modifiers for just about everything you’ll ever need, including:
+
+Pseudo-classes, like :hover, :focus, :first-child, and :required
+Pseudo-elements, like ::before, ::after, ::placeholder, and ::selection
+
+The active prefix in Tailwind CSS is applied, whenever an element is currently pressed.
+        <button class="bg-green-600 p-4 rounded-md active:bg-green-700"> 
+                    Hello Geek! 
+        </button> 
+
+article on pseudo classes->    https://smarative.com/blog/learn-pseudo-with-tailwind-css
+
+:first, :odd, :even, 
+
+
+TYPOGRAPHY
+font-bold is use to set font-weight and text-3xl and so on is use to set fotn size
+
+
+DARK MODE 
+
+
+CUSTOM STYLES
+if you want to add a custom styel you can simpliy put value in [] bracket for example if you want to add a custom padding ypu can use p-[5px]
+
+
+TAILWIND CONFIG
+for ex if you want to use  a custom  color which is  not defined in tailwind you can define a color in tailwind config file
+
+method-1
+module.exports = {
+  theme: {
+    extend: {
+      colors:{
+        primary: "#f06123"
+      }
+    },
+  },
+  plugins: [],
+}
+
+method-2
+<h1 
+   class="text-2xl bg-[#f061FF] p-4">
+       Custom Background Color Two 
+</h1>
+
+
+use directives
+
+there are three approach to style 
+@tailwind base; use to apply css globally
+@tailwind components; use to apply css to componets
+@tailwind  utilities; use to apply css atomically
+
+4th one is @layer
+
+@layer components{
+    .card{
+        @apply m-10 rounded-lg bg-white px-6 py-8;
+    } 
+}
+
+article-> https://dev.to/developeraspire/creating-customized-utility-and-components-classes-in-tailwindcss-2626
+
+
+
