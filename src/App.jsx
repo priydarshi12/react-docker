@@ -1,15 +1,24 @@
-import { useState } from 'react'
- 
-import './App.css'
+import Footer from "./sections/Footer";
+import Hero from "./sections/Hero";
+import PopularProduct from "./sections/PopularProduct";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+import Nav from "./components/Nav";
+const App = () => {
   return (
-    <>
-   <h1 class="text-3xl font-bold text-black underline">this is my text</h1>
-    </>
-  )
-}
+    <main className="relative">
+      <Nav />
+      <section className="xl:padding-l wide:padding-r padding-b">
+        <Hero />
+      </section>
+      <section className="padding">
+        <PopularProduct />
+      </section>
 
-export default App
+      <section className=" bg-black padding-x padding-t pb-8">
+        <Footer />
+      </section>
+    </main>
+  );
+};
+
+export default App;
